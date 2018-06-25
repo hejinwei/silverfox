@@ -21,6 +21,7 @@ public class TestController {
 		balance.setCurrencyName("EOS");
 		balance.setAccountId(1L);
 		balanceMapper.insertSelective(balance);
+		System.out.println("test");
 		return "OK";
 	}
 
