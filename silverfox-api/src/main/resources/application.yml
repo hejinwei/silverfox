@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    #url: jdbc:mysql://172.245.124.167:3306/silverfox?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=true
+    #username: root
+    #password: Hejw123!@#
+    driver-class-name: com.mysql.jdbc.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    
+#公共配置与profiles选择无关
+mybatis:
+  config-location: classpath*:mybatis/mapper/*.xml
+  
+server:
+  port: 8081
+  
+
+---
+#dev
+spring:
+  profiles: dev
+  datasource: 
+    url: jdbc:mysql://172.245.124.167:3306/silverfox?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=true
+    username: root
+    password: Hejw123!@#
+
+server: 
+  port: 8081
+  
+logging: 
+  file: D:\home\simplecredit\log\silverfox\silverfox-all.log
+  level: 
+    com.john: info
+    org.springfromework.web: info
+  
+  
+---
+#online
+spring:
+  profiles: online
+  datasource: 
+    url: jdbc:mysql://172.245.124.167:3306/silverfox?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=true
+    username: root
+    password: Hejw123!@#
+
+server: 
+  port: 80
+  
